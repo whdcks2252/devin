@@ -26,7 +26,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock  VerticalAlignment="Center" TextAlignment="Center" Text="{Binding TxtBlock}" 
                             TextWrapping="Wrap" Background="Beige" Foreground="Black" FontSize="15" Height="56" Width="94"/>
-                <Button Margin="20,0,0,0" VerticalContentAlignment="Center" Content="LoadFile" Height="56" Command="{Binding SaveCommand}" Width="94">
+                <Button Margin="20,0,0,0" VerticalContentAlignment="Center" Content="LoadFile" Height="56" Command="{Binding SaveData}" Width="94">
                     <Button.Background>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
                     </Button.Background>

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using WpfApp2.viewmodel;
 using System.Windows.Markup;
 using System.Data;
+using WpfApp2.util;
 
 namespace WpfApp2.Commands
 {
@@ -20,12 +21,14 @@ namespace WpfApp2.Commands
     {
         private  MainViewModel mainViewModel;
         private  IRepository _dataRepository;
-
+        private static SaveCommand saveCommand;
+        
         public SaveCommand(MainViewModel mainViewModel, IRepository _dataRepository)
         {
             this.mainViewModel = mainViewModel;
             this._dataRepository = _dataRepository;
         }
+
 
         private void save()
         {
@@ -86,25 +89,10 @@ namespace WpfApp2.Commands
             Console.WriteLine(mainViewModel.TxtBlock);
         }
 
-        // 저장후 차트 변경
+        // 차트변경 및 페이지 카운터 증가
         private void ChageChar(ref List<Data> datas)
-        {  
-            //차트 초기화
-            mainViewModel.PlotModel.Series.Clear();
-
-            var dataBox = _dataRepository.GetDataBox();
-
-            var lineSeries = new LineSeries
-            {
-                Color = OxyColors.Black,
-
-            };
-            foreach (var data in datas)
-              lineSeries.Points.Add(new DataPoint(data.Frequency, data.Values));
-
-            mainViewModel.PlotModel.Series.Add(lineSeries);
-
-            mainViewModel.PlotModel.InvalidatePlot(true);// 바인딩 즉시업데이트 트리거
+        {
+            CommonDelegate.chageChart(ref datas);
 
             //pageNumber 변경
             if (mainViewModel.PageNumber == null)

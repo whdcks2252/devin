@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using WpfApp2.viewmodel;
+using WpfApp2.util;
 
 namespace WpfApp2.Commands.FreqSearchPage
 {
@@ -16,6 +17,7 @@ namespace WpfApp2.Commands.FreqSearchPage
     {
         private MainViewModel mainViewModel;
         private IRepository _dataRepository;
+        private delegate void ChangeChart(List<Data> datas);
 
         public FindBySapnCommand(MainViewModel mainViewModel, IRepository _dataRepository)
         {
@@ -29,6 +31,14 @@ namespace WpfApp2.Commands.FreqSearchPage
             {
                 int pageNumber = Int32.Parse(mainViewModel.PageNumber);
                 List<Data> datas = _dataRepository.GetDataBox()[pageNumber - 1];
+
+                //만약 둘다 널값 초기화 span
+                if(mainViewModel.SpanTxt == ""&&mainViewModel.FreTxt=="") {
+                    CommonDelegate.chageChart(ref datas);
+                    return;
+                }
+
+
                 ResultSpan(ref datas);
             }
             catch (Exception ex) { MessageBox.Show("없는 페이지 입니다"); }
@@ -52,33 +62,10 @@ namespace WpfApp2.Commands.FreqSearchPage
                 }
             }
 
-
-            ChageChar(ref ResultDatas);
-
-
+            CommonDelegate.chageChart(ref ResultDatas);
+            
         }
-        // 저장후 차트 변경
-        private void ChageChar(ref List<Data> datas)
-        {
-            //차트 초기화
-            mainViewModel.PlotModel.Series.Clear();
-
-            var dataBox = _dataRepository.GetDataBox();
-
-            var lineSeries = new LineSeries
-            {
-                Color = OxyColors.Black,
-
-            };
-            foreach (var data in datas)
-                lineSeries.Points.Add(new DataPoint(data.Frequency, data.Values));
-
-            mainViewModel.PlotModel.Series.Add(lineSeries);
-
-            mainViewModel.PlotModel.InvalidatePlot(true);// 바인딩 즉시업데이트 트리거
-        }
-
-
+    
         public override bool CanExecute(object parameter)
         {
             return true;

@@ -19,7 +19,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <WrapPanel Margin="0,4,27,0">
-                <Button Command="{Binding AbtCommand}" Margin="0,0,10,10" FontSize="20" Background="{Binding AbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding AbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">A</Button>
+                <Button Command="{Binding Abt}" Margin="0,0,10,10" FontSize="20" Background="{Binding AbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding AbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">A</Button>
                 <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">B</Button>
                 <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">C</Button>
                 <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">D</Button>

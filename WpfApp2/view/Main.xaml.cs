@@ -41,9 +41,7 @@ namespace WpfApp2.view
             this.ResizeMode = ResizeMode.NoResize;
 
             var dataRepository = DataRepository.GetDataRepository();
-            //초기데이터 설정
-          //  dataRepository.initData();
-
+           
             var vm = MainViewModel.GetMainViewModel();
             this.DataContext = vm;
 
@@ -86,6 +84,9 @@ namespace WpfApp2.view
         }
         private void PageSearch_Click(object sender, RoutedEventArgs e)
         {
+            MainViewModel.GetMainViewModel().SpanTxt = null;
+            MainViewModel.GetMainViewModel().FreTxt = null;
+
             if (freqSearchFlag == 1)
             {
                 changeBackgroundWhite(FreqSearchBt);

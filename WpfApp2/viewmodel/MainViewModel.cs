@@ -20,20 +20,21 @@ namespace WpfApp2.viewmodel
 {
     class MainViewModel:ViewModelBase
     {
-        private   IRepository _dataRepository;
+        private  IRepository _dataRepository;
         private  static MainViewModel mainViewModel;
 
         public MainViewModel(IRepository _dataRepository)
         {
             this._dataRepository = _dataRepository;
-            SaveCommand = new SaveCommand(this, _dataRepository); //save 커맨드 이벤트
+            SaveData = new SaveCommand(this, _dataRepository); //save 커맨드 이벤트
             FindPage = new FindPageCommand(this, _dataRepository); //FindPage 커맨드 이벤트
             UpPage = new UpPageCommand(this, _dataRepository);
             DownPage = new DownPageCommand(this, _dataRepository);
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
             PageSearchBt=new PageSearchBtCommand(this, _dataRepository);
-            AbtCommand=new AbtCommand(this, _dataRepository);
-            SetPlotModel();
+            Abt=new AbtCommand(this, _dataRepository);
+
+           SetPlotModel();
         }
 
         //객체 인스턴스
@@ -50,19 +51,20 @@ namespace WpfApp2.viewmodel
 
        ////Command
             //MainComand
-        public ICommand SaveCommand { get; set; }
-            //PageCommand
+        public ICommand SaveData { get; set; }
+        //PageCommand
         public ICommand FindPage { get; set; }
         public ICommand UpPage {  get; set; }
         public ICommand DownPage { get; set; }
         public ICommand PageSearchBt {  get; set; }
             //NumOfPage
-        public ICommand AbtCommand {  get; set; }
+        public ICommand Abt {  get; set; }
             //FreqSearchPageCommand
        public ICommand FindBySapn {  get; set; }
         
         ////oxyPlot
         public PlotModel PlotModel { get; set; }
+
         private void SetPlotModel()
         {
             //PlotModel 생성
@@ -84,24 +86,6 @@ namespace WpfApp2.viewmodel
                 IsZoomEnabled=false
             });
             
-
-            //태스트 코드
-            var dataBox = _dataRepository.GetDataBox();
-
-                var lineSeries = new LineSeries
-                {
-                    Color = OxyColors.Black,
-                   
-                };
-
-            foreach (var datas in dataBox)
-            {
-                foreach (var data in datas)
-                lineSeries.Points.Add(new DataPoint(data.Frequency, data.Values));
-            }
-                PlotModel.Series.Add(lineSeries);
-            //테스트 코드 끝
-
         }
 
 
@@ -110,8 +94,8 @@ namespace WpfApp2.viewmodel
         private string txtBlock;
         //NumOfPage
         private string seachTextBoxTx;
-            //--abt
-        private Brush abtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
+        //--abt
+        private Brush abtBG= new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
         private Brush abtFG = Brushes.Black;
 
         //PageSearchPage

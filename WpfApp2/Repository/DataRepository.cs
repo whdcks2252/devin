@@ -23,21 +23,7 @@ namespace WpfApp2
             return dataRepository;
         
         }
-        ////초기데이터
-        //public void initData()
-        //{
-        //   for (int i = 0; i < 20; i++)
-        //   {
-        //      Data data = new Data()
-        //       {
-        //          Frequency = i,
-        //           Values = i
-
-        //       };
-
-        //      SaveData(ref data);
-        //   }
-        //}
+       
 
         //데이터 저장소에 데이터 저장
         public void SaveDataBox(ref List<Data> datas)
