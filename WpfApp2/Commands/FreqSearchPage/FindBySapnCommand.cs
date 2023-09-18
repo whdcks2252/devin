@@ -17,7 +17,6 @@ namespace WpfApp2.Commands.FreqSearchPage
     {
         private MainViewModel mainViewModel;
         private IRepository _dataRepository;
-        private delegate void ChangeChart(List<Data> datas);
 
         public FindBySapnCommand(MainViewModel mainViewModel, IRepository _dataRepository)
         {

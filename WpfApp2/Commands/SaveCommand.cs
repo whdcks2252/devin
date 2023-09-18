@@ -21,7 +21,6 @@ namespace WpfApp2.Commands
     {
         private  MainViewModel mainViewModel;
         private  IRepository _dataRepository;
-        private static SaveCommand saveCommand;
         
         public SaveCommand(MainViewModel mainViewModel, IRepository _dataRepository)
         {
