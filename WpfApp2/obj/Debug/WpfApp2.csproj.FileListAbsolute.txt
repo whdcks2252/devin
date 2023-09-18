@@ -1,0 +1,84 @@
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe.config
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\WpfApp2.pdb
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.AssemblyReference.cache
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\Main.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\MainWindow.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\App.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\Main.baml
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\MainWindow.baml
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.g.resources
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.cache
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.pdb
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.dll
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.xml
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\seque\OneDrive\바탕 화면\test\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.csproj.AssemblyReference.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.pdb
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\WpfApp2.exe.config
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\WpfApp2.pdb
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\Main.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\MainWindow.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\App.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\Main.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\MainWindow.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.g.resources
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\FreqSearchPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\PageSearchPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\FreqSearchPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\PageSearchPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\NumOfPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm 테스트\WpfApp2\obj\Debug\view\NumOfPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\WpfApp2.exe.config
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\WpfApp2.pdb
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.csproj.AssemblyReference.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\Main.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\MainWindow.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\NumOfPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\PageSearchPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\FreqSearchPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\App.g.cs
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2_MarkupCompile.lref
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\Main.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\MainWindow.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\NumOfPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\PageSearchPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\view\FreqSearchPage.baml
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.g.resources
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.Properties.Resources.resources
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.csproj.GenerateResource.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.csproj.CoreCompileInputs.cache
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.exe
+C:\Users\seque\OneDrive\바탕 화면\test\mvvm프로젝트ver2\WpfApp2\obj\Debug\WpfApp2.pdb
