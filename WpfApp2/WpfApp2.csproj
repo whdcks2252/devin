@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="OxyPlot, Version=2.1.2.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
       <HintPath>..\packages\OxyPlot.Core.2.1.2\lib\net45\OxyPlot.dll</HintPath>
     </Reference>
@@ -63,6 +66,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -84,12 +90,15 @@
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FreqSearchPage\FindBySapnCommand.cs" />
     <Compile Include="Commands\NumOfPage\AbtCommand.cs" />
+    <Compile Include="Commands\NumOfPage\ChageTextNOPCommand.cs" />
+    <Compile Include="Commands\FreqSearchBtCommand.cs" />
     <Compile Include="Commands\PageSearchPage\DownPageCommand.cs" />
-    <Compile Include="Commands\PageSearchPage\PageSearchBtCommand.cs" />
+    <Compile Include="Commands\PageSearchBtCommand.cs" />
     <Compile Include="Commands\PageSearchPage\FindPageCommand.cs" />
     <Compile Include="Commands\PageSearchPage\UpPageCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\SaveCommand.cs" />
+    <Compile Include="ExceptionClass\OverPageEx.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="util\CommonDelegate.cs" />
     <Compile Include="viewmodel\ViewModelBase.cs" />

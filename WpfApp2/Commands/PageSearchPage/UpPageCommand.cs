@@ -28,13 +28,17 @@ namespace WpfApp2.Commands.PageSearchPage
         {
             try
             {
-                int pageNumber = Int32.Parse(mainViewModel.PageNumber);
+                List<List<Data>> dataBox = _dataRepository.GetDataBox();
+                int currentPage = Int32.Parse(mainViewModel.CurrentPage);
+
                 //현재 페이지 +1
-                List<Data> datas = _dataRepository.GetDataBox()[pageNumber];
+                List<Data> datas = _dataRepository.GetDataBox()[currentPage];
 
                 CommonDelegate.chageChart(ref datas);
-                //page번호 
-                mainViewModel.PageNumber = (pageNumber + 1).ToString();
+
+              
+                mainViewModel.CurrentPage = "" + (currentPage + 1);
+                mainViewModel.MaxAndCurPage = mainViewModel.CurrentPage + "/" + dataBox.Count;
             }
             catch (Exception ex)
             {

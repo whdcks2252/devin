@@ -27,14 +27,16 @@ namespace WpfApp2.viewmodel
         {
             this._dataRepository = _dataRepository;
             SaveData = new SaveCommand(this, _dataRepository); //save 커맨드 이벤트
+            PageSearchBt=new PageSearchBtCommand(this, _dataRepository);
+            FreSearchBt = new FreqSearchBtCommand(this, _dataRepository);
             FindPage = new FindPageCommand(this, _dataRepository); //FindPage 커맨드 이벤트
             UpPage = new UpPageCommand(this, _dataRepository);
             DownPage = new DownPageCommand(this, _dataRepository);
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
-            PageSearchBt=new PageSearchBtCommand(this, _dataRepository);
             Abt=new AbtCommand(this, _dataRepository);
+            ChageTextNOP=new ChageTextNOPCommand(this, _dataRepository);
 
-           SetPlotModel();
+            SetPlotModel();
         }
 
         //객체 인스턴스
@@ -52,12 +54,15 @@ namespace WpfApp2.viewmodel
        ////Command
             //MainComand
         public ICommand SaveData { get; set; }
+        public ICommand FreSearchBt { get; set; }
+        public ICommand PageSearchBt {  get; set; }
+
         //PageCommand
         public ICommand FindPage { get; set; }
         public ICommand UpPage {  get; set; }
         public ICommand DownPage { get; set; }
-        public ICommand PageSearchBt {  get; set; }
             //NumOfPage
+        public ICommand ChageTextNOP { get; set; }
         public ICommand Abt {  get; set; }
             //FreqSearchPageCommand
        public ICommand FindBySapn {  get; set; }
@@ -92,14 +97,18 @@ namespace WpfApp2.viewmodel
         ////Property
         //main
         private string txtBlock;
+
         //NumOfPage
-        private string seachTextBoxTx;
+        private string pageNumber;
+
         //--abt
         private Brush abtBG= new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
         private Brush abtFG = Brushes.Black;
 
         //PageSearchPage
-        private string pageNumber;
+        private string seachTextBoxTx;
+        private string maxAndCurPage = "1/n";
+        private string currentPage;
 
         //FreSearchPage
         private string freTxt;
@@ -169,6 +178,18 @@ namespace WpfApp2.viewmodel
                 }
             }
         }
+        public string MaxAndCurPage {
+            get { return maxAndCurPage; }
+            set
+            {
+                if (maxAndCurPage != value)
+                {
+                    maxAndCurPage = value;
+                    OnPropertyChanged("MaxAndCurPage");//속성값이 들어가야함
+                }
+            }
+        }
+        public string CurrentPage { get; set; }
 
         //FreSearchPage
         public string FreTxt

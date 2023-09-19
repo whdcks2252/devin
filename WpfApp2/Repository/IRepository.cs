@@ -10,7 +10,13 @@ namespace WpfApp2
     {
          void SaveDataBox(ref List<Data> data);
         List<List<Data>> GetDataBox();
-        void ClearDatas();
+        void ClearDataBox();
 
+        void SaveDatas(ref Data data);
+
+        List<Data> GetDatas();
+
+        void ClearDatas();
+       
     }
 }

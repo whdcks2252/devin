@@ -29,8 +29,9 @@ namespace WpfApp2.view
 
             var vm = MainViewModel.GetMainViewModel();
 
-            Console.WriteLine(vm.GetHashCode());
             this.DataContext = vm;
         }
+
+       
     }
 }

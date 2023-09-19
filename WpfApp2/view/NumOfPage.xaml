@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:WpfApp2.view"
       mc:Ignorable="d"
       Title="NumOfPage" Height="389.36" Width="219.75">
@@ -15,7 +16,13 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <TextBlock Grid.Row="0" FontSize="15" Margin="10,16,36,25" Text="Num Of Page :"/>
-            <TextBlock Text="{Binding PageNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="20" Background="White" Foreground="Black" Margin="123,11,10,63" ></TextBlock>
+            <TextBox Text="{Binding PageNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="20" Background="White" Foreground="Black" Margin="123,11,10,63"  >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding ChageTextNOP}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
         </Grid>
         <Grid Grid.Row="1">
             <WrapPanel Margin="0,4,27,0">

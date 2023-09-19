@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WpfApp2.viewmodel;
 using System.Windows;
 using WpfApp2.util;
+using System.Data;
 
 namespace WpfApp2.Commands.PageSearchPage
 {
@@ -25,11 +26,17 @@ namespace WpfApp2.Commands.PageSearchPage
         {
             try
             {
-                int pageNumber = Int32.Parse(mainViewModel.PageNumber);
+                List<List<Data>> dataBox = _dataRepository.GetDataBox();
+                int currentPage = Int32.Parse(mainViewModel.CurrentPage);
+
                 //현재 페이지 -1
-                List<Data> datas = _dataRepository.GetDataBox()[pageNumber - 2];
+                List<Data> datas = _dataRepository.GetDataBox()[currentPage - 2];
+
                 CommonDelegate.chageChart(ref datas);
-                mainViewModel.PageNumber =(pageNumber - 1).ToString();
+
+                mainViewModel.CurrentPage = "" + (currentPage - 1);
+                mainViewModel.MaxAndCurPage = mainViewModel.CurrentPage + "/" + dataBox.Count;
+
             }
             catch (Exception ex)
             {

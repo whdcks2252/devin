@@ -13,12 +13,12 @@ using WpfApp2.util;
 
 namespace WpfApp2.Commands
 {
-    class PageSearchBtCommand : CommandBase
+    class FreqSearchBtCommand : CommandBase
     {
         private  MainViewModel mainViewModel;
         private  IRepository _dataRepository;
 
-        public PageSearchBtCommand(MainViewModel _mainViewModel, IRepository _dataRepository)
+        public FreqSearchBtCommand(MainViewModel _mainViewModel, IRepository _dataRepository)
         {
            this.mainViewModel = _mainViewModel;
             this._dataRepository = _dataRepository;
@@ -29,15 +29,16 @@ namespace WpfApp2.Commands
         private void FindPage()
         {
             try{
+
+                List<Data>datas=_dataRepository.GetDatas();
                 //1페이지 부터 시작해야 하므로 Int32.Parse(mainViewModel.SeachTextBoxTx)-1
-                if (mainViewModel.PageNumber == null) return;
-                List<Data> datas = _dataRepository.GetDataBox()[Int32.Parse(mainViewModel.PageNumber)-1];
+                if ( datas.Count==0) return;
+
                 CommonDelegate.chageChart(ref datas);
 
             }
             catch (Exception ex) {
                 MessageBox.Show("없는 페이지 입니다");
-                mainViewModel.SeachTextBoxTx = null;
             }
 
         }

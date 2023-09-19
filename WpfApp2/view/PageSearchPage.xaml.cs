@@ -29,7 +29,6 @@ namespace WpfApp2.view
        
             //뷰모델 연결
             var vm = MainViewModel.GetMainViewModel();
-            Console.WriteLine(vm.GetHashCode());
 
             this.DataContext = vm;
 

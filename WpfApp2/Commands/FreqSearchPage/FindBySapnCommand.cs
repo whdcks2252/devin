@@ -28,8 +28,8 @@ namespace WpfApp2.Commands.FreqSearchPage
         {
             try
             {
-                int pageNumber = Int32.Parse(mainViewModel.PageNumber);
-                List<Data> datas = _dataRepository.GetDataBox()[pageNumber - 1];
+                
+                List<Data> datas = _dataRepository.GetDatas();
 
                 //만약 둘다 널값 초기화 span
                 if(mainViewModel.SpanTxt == ""&&mainViewModel.FreTxt=="") {

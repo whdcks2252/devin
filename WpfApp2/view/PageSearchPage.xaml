@@ -12,7 +12,7 @@
         <Button Command="{Binding DownPage}" Margin="86,22,361,43" FontSize="20">&lt;</Button>
         <Button Command="{Binding UpPage}"  Margin="182,22,264,44" FontSize="20">&gt;</Button>
         <TextBlock Text="페이지 검색 :" FontSize="17" Margin="229,27,144,43"/>
-        <TextBlock  TextAlignment="Center" FontSize="20"  Margin="137,27,315,22">1/N</TextBlock>
+        <TextBlock Text="{Binding MaxAndCurPage , UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontSize="13"  Margin="137,27,315,22"></TextBlock>
         <Button FontSize="15" Command="{Binding FindPage}" Margin="430,25,7,42" Width="50.9999999999999" Height="30.34">검색</Button>
     </Grid>
 </Page>

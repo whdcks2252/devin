@@ -50,28 +50,26 @@ namespace WpfApp2.Commands
                     try
                     {
                         if (textVale.Count > 0)
-                        {   //데이터파일생성
-                            List<Data> datas = new List<Data>();
+                        {   
+                            _dataRepository.ClearDatas();
+                            //데이터파일생성
                             for (int i = 0; i < textVale.Count; i++)
                             {
                                 if (!CheckFileForm(textVale[i], ref splitData))
                                     return;
 
                                 // 데이터 생성 후 저장소에 저장
-                                CreateData(ref splitData,ref datas);
+                                CreateData(ref splitData);
 
                                 //Console.WriteLine("TextFile" + (i + 1).ToString() + "번째 줄.");
-                                //Console.WriteLine(_dataRepository.GetDatas()[i].Frequency + " " + _dataRepository.GetDatas()[i].Values);
+                               // Console.WriteLine(_dataRepository.GetDatas()[i].Frequency + " " + _dataRepository.GetDatas()[i].Values);
                             }
-
-                            //데이터 저장소에 데이터 저장
-                            _dataRepository.SaveDataBox(ref datas);
 
                             //Block에 파일 경로 표시
                             ChageBlock(ref openFileDialog);
-
+                            List<Data> datas= _dataRepository.GetDatas();
                             //차트 변경
-                            ChageChar(ref datas);
+                            CommonDelegate.chageChart(ref datas);
                         }
                     }
                     catch (Exception ex) { MessageBox.Show("잘못된 형식의 파일 입니다");}
@@ -85,38 +83,20 @@ namespace WpfApp2.Commands
         {
             string[] source = openFileDialog.FileNames[0].Split('\\');
             mainViewModel.TxtBlock = source[source.Length - 1];
-            Console.WriteLine(mainViewModel.TxtBlock);
-        }
 
-        // 차트변경 및 페이지 카운터 증가
-        private void ChageChar(ref List<Data> datas)
-        {
-            CommonDelegate.chageChart(ref datas);
-
-            //pageNumber 변경
-            if (mainViewModel.PageNumber == null)
-            {
-                mainViewModel.PageNumber = 1.ToString();
-            }
-            else
-                mainViewModel.PageNumber = (Int32.Parse(mainViewModel.PageNumber) + 1).ToString();
         }
-    
 
         // 데이터 생성 후 저장소에 저장
-        private void CreateData(ref string[] splitData,ref List<Data> datas)
+        private void CreateData(ref string[] splitData)
         {
             //데이터 키:쌍 값으로 생성
             Data data = new Data() {
             Frequency= (Double.Parse(splitData[0])),
             Values= (Double.Parse(splitData[1]))
             };
-           
-            datas.Add(data);
-            
 
+            _dataRepository.GetDatas().Add(data);
         }
-
 
         //Delimiter 검증 함수
         private bool CheckFileForm(string str, ref string[] splitData)

@@ -10,16 +10,15 @@ using System.Linq.Expressions;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp2.util;
-using System.Data;
 
 namespace WpfApp2.Commands
 {
-    class FindPageCommand : CommandBase
+    class PageSearchBtCommand : CommandBase
     {
         private  MainViewModel mainViewModel;
         private  IRepository _dataRepository;
 
-        public FindPageCommand(MainViewModel _mainViewModel, IRepository _dataRepository)
+        public PageSearchBtCommand(MainViewModel _mainViewModel, IRepository _dataRepository)
         {
            this.mainViewModel = _mainViewModel;
             this._dataRepository = _dataRepository;
@@ -30,15 +29,17 @@ namespace WpfApp2.Commands
         private void FindPage()
         {
             try{
-                List<List<Data>>dataBox=_dataRepository.GetDataBox();
-                List<Data> datas = _dataRepository.GetDataBox()[Int32.Parse(mainViewModel.SeachTextBoxTx)-1];
+
+                List<Data>datas=_dataRepository.GetDatas();
+                //1페이지 부터 시작해야 하므로 Int32.Parse(mainViewModel.SeachTextBoxTx)-1
+                if ( datas.Count==0) return;
+
                 CommonDelegate.chageChart(ref datas);
-                mainViewModel.MaxAndCurPage = mainViewModel.SeachTextBoxTx +"/"+dataBox.Count;
-                mainViewModel.CurrentPage= mainViewModel.SeachTextBoxTx;
-                mainViewModel.SeachTextBoxTx = null;
-            }catch(Exception ex) {
+
+
+            }
+            catch (Exception ex) {
                 MessageBox.Show("없는 페이지 입니다");
-                mainViewModel.SeachTextBoxTx = null;
             }
 
         }

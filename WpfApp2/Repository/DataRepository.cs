@@ -11,6 +11,7 @@ namespace WpfApp2
     {   
         // 싱글톤 적용
         private static  DataRepository dataRepository;
+        private static List<Data>datas=new List<Data>();
         private static List<List<Data>> dataBox = new List<List<Data>>();
 
         //객체 인스턴스
@@ -23,20 +24,37 @@ namespace WpfApp2
             return dataRepository;
         
         }
-       
 
         //데이터 저장소에 데이터 저장
+        public void SaveDatas(ref Data data)
+        {
+            datas.Add(data);
+        }
+
+        public List<Data> GetDatas()
+        {
+            return datas;
+        }
+
+        public void ClearDatas()
+        {
+            datas.Clear();
+        }
+
+       
+        //데이터 박스에 데이터 저장
         public void SaveDataBox(ref List<Data> datas)
         {   
             dataBox.Add(datas);
         }
+
 
         public List<List<Data>> GetDataBox()
         {
             return dataBox;
         }
 
-        public void ClearDatas()
+        public void ClearDataBox()
         {
             dataBox.Clear();
         }
