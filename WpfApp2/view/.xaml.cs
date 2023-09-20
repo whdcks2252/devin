@@ -17,33 +17,30 @@ using WpfApp2.viewmodel;
 namespace WpfApp2.view
 {
     /// <summary>
-    /// FreqSearchPage.xaml에 대한 상호 작용 논리
+    /// NumOfPage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class PageSearchPage : Page
+    public partial class LoadedIQ_ImbPage : Page
     {
-        private static PageSearchPage pageSearchPage;
-        public PageSearchPage()
+        private static LoadedIQ_ImbPage loadedIQ_ImbPage;
+        private LoadedIQ_ImbPage()
         {
-            this.Width = 488;
-            this.Height = 97.34;
+            this.Height = 389.36;
+            this.Width = 219.75;
             InitializeComponent();
-       
-            //뷰모델 연결
-            var vm = MainViewModel.GetMainViewModel();
+
+            var vm = CalViewModel.GetMainViewModel();
 
             this.DataContext = vm;
-
-            
         }
-
-        public static PageSearchPage GetPageSearchPage()
+        public static LoadedIQ_ImbPage GetLoadedIQ_ImbPage()
         {
-            if (pageSearchPage == null)
+            if (loadedIQ_ImbPage == null)
             {
-                pageSearchPage = new PageSearchPage();
+                loadedIQ_ImbPage = new LoadedIQ_ImbPage();
             }
-            return pageSearchPage;
+            return loadedIQ_ImbPage;
 
         }
+
     }
 }

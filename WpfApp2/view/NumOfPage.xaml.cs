@@ -21,7 +21,8 @@ namespace WpfApp2.view
     /// </summary>
     public partial class NumOfPage : Page
     {
-        public NumOfPage()
+        private static NumOfPage numOfPage;
+        private  NumOfPage()
         {
             this.Height = 389.36;
             this.Width = 219.75;
@@ -32,6 +33,14 @@ namespace WpfApp2.view
             this.DataContext = vm;
         }
 
-       
+        public static NumOfPage GetNumOfPage()
+        {
+            if (numOfPage == null)
+            {
+                numOfPage = new NumOfPage();
+            }
+            return numOfPage;
+
+        }
     }
 }

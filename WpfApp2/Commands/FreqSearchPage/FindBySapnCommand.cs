@@ -11,7 +11,7 @@ using System.Windows.Markup;
 using WpfApp2.viewmodel;
 using WpfApp2.util;
 
-namespace WpfApp2.Commands.FreqSearchPage
+namespace WpfApp2.Commands
 {
     class FindBySapnCommand : CommandBase
     {

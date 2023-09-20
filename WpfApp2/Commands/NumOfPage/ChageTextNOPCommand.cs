@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using WpfApp2.util;
 using WpfApp2.viewmodel;
 
-namespace WpfApp2.Commands.NumOfPage
+namespace WpfApp2.Commands
 {
     class ChageTextNOPCommand : CommandBase
     {
@@ -81,7 +81,7 @@ namespace WpfApp2.Commands.NumOfPage
                 }
             }
             else {
-                for (int i = 0; i < (datas.Count - (divisonNum * 2)); i += divisonNum)
+                for (int i = 0; i < (datas.Count - (divisonNum * 2.3)); i += divisonNum) //임계값 정해주기 !!(datas.Count - (divisonNum * 2.3) 
                 {
                     List<Data> sublist = datas.Skip(i).Take(divisonNum).ToList();
 

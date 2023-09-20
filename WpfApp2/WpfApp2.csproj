@@ -89,6 +89,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FreqSearchPage\FindBySapnCommand.cs" />
+    <Compile Include="Commands\MainSave\OpenFileMenager.cs" />
     <Compile Include="Commands\NumOfPage\AbtCommand.cs" />
     <Compile Include="Commands\NumOfPage\ChageTextNOPCommand.cs" />
     <Compile Include="Commands\FreqSearchBtCommand.cs" />
@@ -97,12 +98,21 @@
     <Compile Include="Commands\PageSearchPage\FindPageCommand.cs" />
     <Compile Include="Commands\PageSearchPage\UpPageCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Commands\SaveCommand.cs" />
+    <Compile Include="Commands\MainSave\SaveCommand.cs" />
+    <Compile Include="enum\CalFileNameEnum.cs" />
     <Compile Include="ExceptionClass\OverPageEx.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="util\ChangeData.cs" />
     <Compile Include="util\CommonDelegate.cs" />
+    <Compile Include="viewmodel\CalViewModel.cs" />
     <Compile Include="viewmodel\ViewModelBase.cs" />
     <Compile Include="viewmodel\MainViewModel.cs" />
+    <Compile Include="view\.xaml.cs">
+      <DependentUpon>LoadedIQ_ImbPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\LoadedAtten.xaml.cs">
+      <DependentUpon>LoadedAtten.xaml</DependentUpon>
+    </Compile>
     <Compile Include="view\NumOfPage.xaml.cs">
       <DependentUpon>NumOfPage.xaml</DependentUpon>
     </Compile>
@@ -112,6 +122,10 @@
     <Compile Include="view\FreqSearchPage.xaml.cs">
       <DependentUpon>FreqSearchPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="view\LoadedAtten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +147,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="view\LoadedIQ_ImbPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="view\NumOfPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -21,7 +21,8 @@ namespace WpfApp2.view
     /// </summary>
     public partial class FreqSearchPage : Page
     {
-        public FreqSearchPage()
+        private static FreqSearchPage freqSearchPage;
+        private FreqSearchPage()
         {
             this.Width =488;
             this.Height = 97.34;
@@ -30,6 +31,16 @@ namespace WpfApp2.view
             //뷰모델 연결
             var vm = MainViewModel.GetMainViewModel();
             this.DataContext = vm;
+        }
+
+        public static FreqSearchPage GetFreqSearchPage()
+        {
+            if (freqSearchPage == null)
+            {
+                freqSearchPage = new FreqSearchPage();
+            }
+            return freqSearchPage;
+
         }
     }
 }

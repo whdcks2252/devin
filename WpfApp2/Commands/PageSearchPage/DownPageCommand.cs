@@ -10,7 +10,7 @@ using System.Windows;
 using WpfApp2.util;
 using System.Data;
 
-namespace WpfApp2.Commands.PageSearchPage
+namespace WpfApp2.Commands
 {
     class DownPageCommand : CommandBase
     {

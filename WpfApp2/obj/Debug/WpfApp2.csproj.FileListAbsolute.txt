@@ -116,3 +116,7 @@ C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\bin\Debug\Microsoft.Expre
 C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\obj\Debug\view\LoadedIQ_ImbPage.g.cs
+C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\obj\Debug\view\LoadedIQ_ImbPage.baml
+C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\obj\Debug\view\LoadedAtten.g.cs
+C:\Users\seque\OneDrive\바탕 화면\davinpro\WpfApp2\obj\Debug\view\LoadedAtten.baml

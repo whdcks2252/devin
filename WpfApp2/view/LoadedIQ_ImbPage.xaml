@@ -1,0 +1,28 @@
+﻿<Page x:Class="WpfApp2.view.LoadedIQ_ImbPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:local="clr-namespace:WpfApp2.view"
+      mc:Ignorable="d"
+      Title="LoadedIQ_ImbPage" Height="389.36" Width="219.75">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel Margin="0,4,27,0">
+                <Button Command="{Binding Abt}" Margin="0,0,10,10" FontSize="20" Background="{Binding AbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding AbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">A</Button>
+                <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">B</Button>
+                <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">C</Button>
+                <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">D</Button>
+                <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">E</Button>
+                <Button Margin="0,0,10,10" FontSize="20" Background="#FFDDDDDD" Height="41" Width="53">F</Button>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Page>

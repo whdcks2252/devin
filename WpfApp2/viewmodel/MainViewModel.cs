@@ -12,9 +12,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using WpfApp2.Commands;
-using WpfApp2.Commands.FreqSearchPage;
-using WpfApp2.Commands.NumOfPage;
-using WpfApp2.Commands.PageSearchPage;
 
 namespace WpfApp2.viewmodel
 {
@@ -33,9 +30,7 @@ namespace WpfApp2.viewmodel
             UpPage = new UpPageCommand(this, _dataRepository);
             DownPage = new DownPageCommand(this, _dataRepository);
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
-            Abt=new AbtCommand(this, _dataRepository);
             ChageTextNOP=new ChageTextNOPCommand(this, _dataRepository);
-
             SetPlotModel();
         }
 
@@ -63,7 +58,6 @@ namespace WpfApp2.viewmodel
         public ICommand DownPage { get; set; }
             //NumOfPage
         public ICommand ChageTextNOP { get; set; }
-        public ICommand Abt {  get; set; }
             //FreqSearchPageCommand
        public ICommand FindBySapn {  get; set; }
         
@@ -97,23 +91,28 @@ namespace WpfApp2.viewmodel
         ////Property
         //main
         private string txtBlock;
+        private string yLable;
+        private object fr1Content;
+        private object fr2Content;
 
         //NumOfPage
         private string pageNumber;
 
-        //--abt
-        private Brush abtBG= new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
-        private Brush abtFG = Brushes.Black;
 
         //PageSearchPage
         private string seachTextBoxTx;
         private string maxAndCurPage = "1/n";
         private string currentPage;
+        private Brush pageSearchPageBtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
+        private Brush pageSearchPageBtFG = Brushes.Black;
+        private Visibility pageSearchPageBtVis;
 
         //FreSearchPage
         private string freTxt;
         private string spanTxt;
-
+        private Brush freSearchPageBtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
+        private Brush freSearchPageBtFG = Brushes.Black;
+        private Visibility freSearchPageBtVis = Visibility.Visible;
 
         //main
         public string TxtBlock {
@@ -127,7 +126,43 @@ namespace WpfApp2.viewmodel
                 }
             }
         }
+        public string YLable
+        {
+            get { return yLable; }
+            set
+            {
+                if (yLable != value)
+                {
+                    yLable = value;
+                    OnPropertyChanged("YLable");//속성값이 들어가야함
+                }
+            }
+        }
 
+        public object Fr1Content
+        {
+            get { return fr1Content; }
+            set
+            {
+                if (fr1Content != value)
+                {
+                    fr1Content = value;
+                    OnPropertyChanged("Fr1Content");//속성값이 들어가야함
+                }
+            }
+        }
+        public object Fr2Content
+        {
+            get { return fr2Content; }
+            set
+            {
+                if (fr2Content != value)
+                {
+                    fr2Content = value;
+                    OnPropertyChanged("Fr2Content");//속성값이 들어가야함
+                }
+            }
+        }
         //NumOfPage
         public string SeachTextBoxTx {
             get { return seachTextBoxTx; }
@@ -137,31 +172,6 @@ namespace WpfApp2.viewmodel
                 {
                     seachTextBoxTx = value;
                     OnPropertyChanged("SeachTextBoxTx");//속성값이 들어가야함
-                }
-            }
-        }
-         //--abt
-        public Brush AbtFG
-        {
-            get { return abtFG; }
-            set
-            {
-                if (abtFG != value)
-                {
-                    abtFG = value;
-                    OnPropertyChanged("AbtFG");//속성값이 들어가야함
-                }
-            }
-        }
-        public Brush AbtBG
-        {
-            get { return abtBG; }
-            set
-            {
-                if (abtBG != value)
-                {
-                    abtBG = value;
-                    OnPropertyChanged("AbtBG");//속성값이 들어가야함
                 }
             }
         }
@@ -189,6 +199,44 @@ namespace WpfApp2.viewmodel
                 }
             }
         }
+
+        public Brush PageSearchPageBtFG
+        {
+            get { return pageSearchPageBtFG; }
+            set
+            {
+                if (pageSearchPageBtFG != value)
+                {
+                    pageSearchPageBtFG = value;
+                    OnPropertyChanged("PageSearchPageBtFG");//속성값이 들어가야함
+                }
+            }
+        }
+        public Brush PageSearchPageBtBG
+        {
+            get { return pageSearchPageBtBG; }
+            set
+            {
+                if (pageSearchPageBtBG != value)
+                {
+                    pageSearchPageBtBG = value;
+                    OnPropertyChanged("PageSearchPageBtBG");//속성값이 들어가야함
+                }
+            }
+        }
+        public Visibility PageSearchPageBtVis
+        {
+            get { return pageSearchPageBtVis; }
+            set
+            {
+                if (pageSearchPageBtVis != value)
+                {
+                    pageSearchPageBtVis = value;
+                    OnPropertyChanged("PageSearchPageBtVis");//속성값이 들어가야함
+                }
+            }
+        }
+
         public string CurrentPage { get; set; }
 
         //FreSearchPage
@@ -216,5 +264,42 @@ namespace WpfApp2.viewmodel
                 }
             }
         }
+        public Brush FreSearchPageBtBG
+        {
+            get { return freSearchPageBtBG; }
+            set
+            {
+                if (freSearchPageBtBG != value)
+                {
+                    freSearchPageBtBG = value;
+                    OnPropertyChanged("FreSearchPageBtBG");//속성값이 들어가야함
+                }
+            }
+        }
+        public Brush FreSearchPageBtFG
+        {
+            get { return freSearchPageBtFG; }
+            set
+            {
+                if (freSearchPageBtFG != value)
+                {
+                    freSearchPageBtFG = value;
+                    OnPropertyChanged("FreSearchPageBtFG");//속성값이 들어가야함
+                }
+            }
+        }
+        public Visibility FreSearchPageBtVis
+        {
+            get { return freSearchPageBtVis; }
+            set
+            {
+                if (freSearchPageBtVis != value)
+                {
+                    freSearchPageBtVis = value;
+                    OnPropertyChanged("FreSearchPageBtVis");//속성값이 들어가야함
+                }
+            }
+        }
+
     }
 }

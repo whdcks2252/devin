@@ -50,8 +50,8 @@
 
             <Grid Grid.Column="1" Grid.Row="1">
                 <Canvas>
-                    <TextBlock FontSize="15" Panel.ZIndex="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="4"><Run Text="vaule"/></TextBlock>
-                    <oxy:PlotView  Model="{Binding PlotModel}" Height="379" Width="467"/>
+                    <TextBlock Text="{Binding YLable,UpdateSourceTrigger=PropertyChanged}" FontSize="13" Panel.ZIndex="1" HorizontalAlignment="Left"  VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="4" Width="110"></TextBlock>
+                    <oxy:PlotView  Model="{Binding PlotModel,UpdateSourceTrigger=PropertyChanged}" Height="379" Width="467"/>
                     <TextBlock FontSize="15" Panel.ZIndex="1" Canvas.Left="410" Canvas.Top="346" HorizontalAlignment="Left" VerticalAlignment="Center" Width="91"><Run Text="frequency"/></TextBlock>
                 </Canvas>
             </Grid>
@@ -59,14 +59,20 @@
         <!--찾기-->
         <Grid Grid.Column="0" Grid.Row="3">
             <StackPanel Orientation="Vertical"  RenderTransformOrigin="0.5,0.5" Margin="518,0,0,11">
-                <Button x:Name="FreqSearchBt" Command="{Binding FreSearchBt}" Height="39" Click="FreqSearch_Click" Content="FreqSearch" />
-                <Button Command="{Binding PageSearchBt}" x:Name="PageSearchBt" Height="39" Click="PageSearch_Click" Content="PageSearch"/>
+                <Button x:Name="FreqSearchBt" Command="{Binding FreSearchBt}" Height="39" 
+                        Content="FreqSearch"  Background="{Binding FreSearchPageBtBG, UpdateSourceTrigger=PropertyChanged}"
+                        Foreground="{Binding FreSearchPageBtFG,UpdateSourceTrigger=PropertyChanged}"
+                         Visibility="{Binding FreSearchPageBtVis,UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Command="{Binding PageSearchBt}" x:Name="PageSearchBt" Height="39" Content="PageSearch"
+                        Background="{Binding PageSearchPageBtBG, UpdateSourceTrigger=PropertyChanged}"
+                        Foreground="{Binding PageSearchPageBtFG,UpdateSourceTrigger=PropertyChanged}"
+                        Visibility="{Binding PageSearchPageBtVis,UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
-            <Frame x:Name="fr" Margin="0,0,141,0" NavigationUIVisibility="Hidden"/>
+            <Frame Content="{Binding Fr1Content}"  x:Name="fr" Margin="0,0,141,0" NavigationUIVisibility="Hidden"/>
         </Grid>
         <!--찾기 기능-->
         <Grid Grid.Row="1" Grid.Column="1">
-            <Frame x:Name="NumOfPageFrame" NavigationUIVisibility="Hidden"/>
+            <Frame Content="{Binding Fr2Content}"  x:Name="NumOfPageFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
 
     </Grid>

@@ -17,32 +17,29 @@ using WpfApp2.viewmodel;
 namespace WpfApp2.view
 {
     /// <summary>
-    /// FreqSearchPage.xaml에 대한 상호 작용 논리
+    /// LoadedAtten.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class PageSearchPage : Page
+    public partial class LoadedAtten : Page
     {
-        private static PageSearchPage pageSearchPage;
-        public PageSearchPage()
+        private static LoadedAtten loadedAtten;
+        public LoadedAtten()
         {
-            this.Width = 488;
-            this.Height = 97.34;
+            this.Height = 389.36;
+            this.Width = 219.75;
             InitializeComponent();
-       
-            //뷰모델 연결
-            var vm = MainViewModel.GetMainViewModel();
+
+            var vm = CalViewModel.GetMainViewModel();
 
             this.DataContext = vm;
-
-            
         }
 
-        public static PageSearchPage GetPageSearchPage()
+        public static LoadedAtten GetLoadedAtten()
         {
-            if (pageSearchPage == null)
+            if (loadedAtten == null)
             {
-                pageSearchPage = new PageSearchPage();
+                loadedAtten = new LoadedAtten();
             }
-            return pageSearchPage;
+            return loadedAtten;
 
         }
     }
