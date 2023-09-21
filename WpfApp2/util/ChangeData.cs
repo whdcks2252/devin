@@ -10,15 +10,12 @@ namespace WpfApp2.util
      class ChangeData
     {
 
-        public static void ConverterData(ref IRepository repository,string fileName) {
+        public static void ConverterData(ref IRepository repository, string fileName)
+        {
 
-            List<Data> datas=repository.GetDatas();
+            List<Data> datas = repository.GetDatas();
 
-            if (fileName.Contains(CalFileNameEnum.IQ_Imb.ToString()))
-            {
-                tempIQ_Imb(ref datas);
-            }
-            else if (fileName.Contains(CalFileNameEnum.PwrOffset.ToString()))
+            if (fileName.Contains(CalFileNameEnum.PwrOffset.ToString()))
             {
                 tempPwrOffset(ref datas);
             }
@@ -30,11 +27,7 @@ namespace WpfApp2.util
             {
                 tempGrobal(ref datas);
             }
-                
 
-        }
-        private static void tempIQ_Imb(ref List<Data> datas)
-        {
 
         }
         private static void tempPwrOffset(ref List<Data> datas)
@@ -45,7 +38,7 @@ namespace WpfApp2.util
                 datas[i].Values = datas[i].PowerAccuracy;
             }
         }
-        private static  void tempAtten(ref List<Data> datas)
+        public static  void tempAtten(ref List<Data> datas)
         {
             for (int i = 0; i < datas.Count; i++)
             {

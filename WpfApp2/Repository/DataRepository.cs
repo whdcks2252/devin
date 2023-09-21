@@ -13,6 +13,8 @@ namespace WpfApp2
         private static  DataRepository dataRepository;
         private static List<Data>datas=new List<Data>();
         private static List<List<Data>> dataBox = new List<List<Data>>();
+        private static List<Data>DatasDto=new List<Data>();
+        
 
         //객체 인스턴스
         public static DataRepository GetDataRepository() {
@@ -24,6 +26,19 @@ namespace WpfApp2
             return dataRepository;
         
         }
+        //dto Data
+        public List<Data> GetDatasDTO()
+        {
+            DatasDto.Clear();
+
+            foreach(Data data in datas) { 
+                DatasDto.Add(data);
+            }
+
+            return DatasDto;
+        }
+
+
 
         //데이터 저장소에 데이터 저장
         public void SaveDatas(ref Data data)

@@ -32,7 +32,7 @@ namespace WpfApp2.Commands
             try{
                 List<List<Data>>dataBox=_dataRepository.GetDataBox();
                 List<Data> datas = _dataRepository.GetDataBox()[Int32.Parse(mainViewModel.SeachTextBoxTx)-1];
-                CommonDelegate.chageChart(ref datas);
+                mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
                 mainViewModel.MaxAndCurPage = mainViewModel.SeachTextBoxTx +"/"+dataBox.Count;
                 mainViewModel.CurrentPage= mainViewModel.SeachTextBoxTx;
                 mainViewModel.SeachTextBoxTx = null;

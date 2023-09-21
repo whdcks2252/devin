@@ -8,6 +8,17 @@
       d:DesignHeight="389.36" d:DesignWidth="219.75"
       Title="LoadedAtten">
     <Grid>
-        
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Grid.Row="0" FontSize="15" Margin="0,16,107,63" Text="기준 Atten :"/>
+                <TextBox Text="{Binding AttenTxt, UpdateSourceTrigger=PropertyChanged}" FontSize="13" Background="White" Foreground="Black" Margin="86,12,61,66" />
+                <Button Command="{Binding Atten}" Margin="165,12,11,66">적용</Button>
+             </Grid>
+            <Grid Grid.Row="1"/>
+     </Grid>
+    
 </Page>

@@ -51,7 +51,7 @@
             <Grid Grid.Column="1" Grid.Row="1">
                 <Canvas>
                     <TextBlock Text="{Binding YLable,UpdateSourceTrigger=PropertyChanged}" FontSize="13" Panel.ZIndex="1" HorizontalAlignment="Left"  VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="4" Width="110"></TextBlock>
-                    <oxy:PlotView  Model="{Binding PlotModel,UpdateSourceTrigger=PropertyChanged}" Height="379" Width="467"/>
+                    <oxy:PlotView  Model="{Binding PlotModelmp,UpdateSourceTrigger=PropertyChanged}" Height="379" Width="467"/>
                     <TextBlock FontSize="15" Panel.ZIndex="1" Canvas.Left="410" Canvas.Top="346" HorizontalAlignment="Left" VerticalAlignment="Center" Width="91"><Run Text="frequency"/></TextBlock>
                 </Canvas>
             </Grid>

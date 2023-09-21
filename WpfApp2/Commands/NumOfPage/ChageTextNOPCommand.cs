@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OxyPlot;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,13 +25,15 @@ namespace WpfApp2.Commands
         }
 
         private void chageText()
-        {   
+        { 
+
             List<Data> datas = _dataRepository.GetDatas();
             List<List<Data>> dataBox = _dataRepository.GetDataBox();
             try
             {
                 int pageNumber = Int32.Parse(mainViewModel.PageNumber);
                 int divisonNum =datas.Count / Int32.Parse(mainViewModel.PageNumber);
+                
 
                 //데이터갯수가 10 이하일때 처리하기위한 조건문
                 if (datas.Count >= 10)
@@ -58,20 +61,21 @@ namespace WpfApp2.Commands
             }
             catch(OverPageEx e) {MessageBox.Show("커스텀 잘못된 입력값 입니다. 현재 데이터 갯수: " + datas.Count()); }
             catch(FormatException e) { return; }
-            catch(Exception e) { MessageBox.Show("잘못된 입력값 입니다. 현재 데이터 갯수: " + datas.Count()); }
+            catch(Exception e) { 
+                MessageBox.Show("잘못된 입력값 입니다. 현재 데이터 갯수: " + datas.Count()); }
         }
 
 
 
         //데이터 나누기
         private void DivisionData(ref List<List<Data>>dataBox, ref List<Data>datas,ref int divisonNum)
-        {   
+        {
             //데이터 초기화
             _dataRepository.ClearDataBox();
 
             //PageNumber 갯수마다 데이터 저장 및 페이징
             //데이터 손실 때문에 안나눠 질 때 맨 마지막에 데이터 집어 넣음
-            if(datas.Count%divisonNum==0)
+            if(datas.Count% Int32.Parse(mainViewModel.PageNumber) == 0)
             {
                 for (int i = 0; i < (datas.Count); i += divisonNum)
                 {
@@ -81,21 +85,23 @@ namespace WpfApp2.Commands
                 }
             }
             else {
-                for (int i = 0; i < (datas.Count - (divisonNum * 2.3)); i += divisonNum) //임계값 정해주기 !!(datas.Count - (divisonNum * 2.3) 
+                Console.WriteLine(Int32.Parse(mainViewModel.PageNumber));
+                int i = 0;
+                for (int j = 0; j < Int32.Parse(mainViewModel.PageNumber) - 1; j ++) //
                 {
                     List<Data> sublist = datas.Skip(i).Take(divisonNum).ToList();
 
                     dataBox.Add(sublist);
+                    i += divisonNum;
                 }
-
                 List<Data> remainingObjects = datas.Skip(datas.Count - divisonNum).ToList();
                 dataBox.Add(remainingObjects);
             }
             
-
+            Console.WriteLine(dataBox.Count);
             //첫번째 데이터 차트 표시
             List<Data> firstData = dataBox[0];
-            CommonDelegate.chageChart(ref firstData);
+            mainViewModel.PlotModelmp.ChageCharMethod(ref firstData);
         }
 
 

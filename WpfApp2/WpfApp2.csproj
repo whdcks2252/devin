@@ -87,10 +87,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AttenCommand\AttenCommad.cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_FbtCommand .cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_EbtCommand.cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_DbtCommand.cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_CbtCommand.cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_BbtCommand .cs" />
+    <Compile Include="Commands\CalViewModelCommand\Iq_AbtCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FreqSearchPage\FindBySapnCommand.cs" />
     <Compile Include="Commands\MainSave\OpenFileMenager.cs" />
-    <Compile Include="Commands\NumOfPage\AbtCommand.cs" />
     <Compile Include="Commands\NumOfPage\ChageTextNOPCommand.cs" />
     <Compile Include="Commands\FreqSearchBtCommand.cs" />
     <Compile Include="Commands\PageSearchPage\DownPageCommand.cs" />
@@ -99,11 +105,14 @@
     <Compile Include="Commands\PageSearchPage\UpPageCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\MainSave\SaveCommand.cs" />
+    <Compile Include="enum\IQ_ButtonEnum.cs" />
     <Compile Include="enum\CalFileNameEnum.cs" />
     <Compile Include="ExceptionClass\OverPageEx.cs" />
+    <Compile Include="Repository\CalDataRepository.cs" />
+    <Compile Include="Repository\ICalDataRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="util\ChangeData.cs" />
-    <Compile Include="util\CommonDelegate.cs" />
+    <Compile Include="util\PlotModelImp.cs" />
     <Compile Include="viewmodel\CalViewModel.cs" />
     <Compile Include="viewmodel\ViewModelBase.cs" />
     <Compile Include="viewmodel\MainViewModel.cs" />

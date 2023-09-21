@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using WpfApp2.Commands;
+using WpfApp2.util;
 
 namespace WpfApp2.viewmodel
 {
@@ -31,7 +32,7 @@ namespace WpfApp2.viewmodel
             DownPage = new DownPageCommand(this, _dataRepository);
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
             ChageTextNOP=new ChageTextNOPCommand(this, _dataRepository);
-            SetPlotModel();
+            PlotModelmp = PlotModelImp.GetPlotModelImp();
         }
 
         //객체 인스턴스
@@ -62,30 +63,7 @@ namespace WpfApp2.viewmodel
        public ICommand FindBySapn {  get; set; }
         
         ////oxyPlot
-        public PlotModel PlotModel { get; set; }
-
-        private void SetPlotModel()
-        {
-            //PlotModel 생성
-            PlotModel = new PlotModel() { Title = "Chart" };
-
-            //x축 생성
-           PlotModel.Axes.Add(new LinearAxis
-            {
-                Position = AxisPosition.Bottom,
-                Title = "frequency(GHz)",
-                IsZoomEnabled = false,
-            });
-            //y축 생성
-           PlotModel.Axes.Add(new LinearAxis
-            {
-                Position = AxisPosition.Left,
-                Title = "value(dBm)",
-                MajorGridlineStyle = LineStyle.Solid,
-                IsZoomEnabled=false
-            });
-            
-        }
+        public PlotModelImp PlotModelmp { get; set; }
 
 
         ////Property

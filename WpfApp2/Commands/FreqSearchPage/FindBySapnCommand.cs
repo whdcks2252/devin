@@ -33,7 +33,7 @@ namespace WpfApp2.Commands
 
                 //만약 둘다 널값 초기화 span
                 if(mainViewModel.SpanTxt == ""&&mainViewModel.FreTxt=="") {
-                    CommonDelegate.chageChart(ref datas);
+                    mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
                     return;
                 }
 
@@ -61,7 +61,7 @@ namespace WpfApp2.Commands
                 }
             }
 
-            CommonDelegate.chageChart(ref ResultDatas);
+            mainViewModel.PlotModelmp.ChageCharMethod(ref ResultDatas);
             
         }
     

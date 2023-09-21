@@ -17,6 +17,9 @@ namespace WpfApp2
         List<Data> GetDatas();
 
         void ClearDatas();
-       
+
+        //DTO데이터 데이터 영속성
+         List<Data> GetDatasDTO();
+
     }
 }

@@ -36,7 +36,7 @@ namespace WpfApp2.Commands
                 //1페이지 부터 시작해야 하므로 Int32.Parse(mainViewModel.SeachTextBoxTx)-1
                 if ( datas.Count==0) return;
                 ChangeFrameAndColor(ref mainViewModel);
-                CommonDelegate.chageChart(ref datas);
+                mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
 
 
             }

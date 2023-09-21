@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using WpfApp2.util;
+using WpfApp2.viewmodel;
 
 namespace WpfApp2.Commands.MainSave
 {
@@ -43,8 +44,8 @@ namespace WpfApp2.Commands.MainSave
                         }
 
                         List<Data> datas = _dataRepository.GetDatas();
-                        //차트 변경
-                        CommonDelegate.chageChart(ref datas);
+                    //차트 변경
+                    PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
                     }
             }
         }
@@ -116,7 +117,7 @@ namespace WpfApp2.Commands.MainSave
                         
                     }
 
-                    CommonDelegate.ClearChart();//데이터 변경시 차트 초기화
+                    PlotModelImp.GetPlotModelImp().ClearChartMethod();//데이터 변경시 차트 초기화
                 }
 
             }
@@ -160,8 +161,8 @@ namespace WpfApp2.Commands.MainSave
                 }
             }
 
-            CommonDelegate.chageChartCalNomal(ref datas);
-            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(openFileDialog.FileName));//데이터 변환 Frequency와 value를 사용하기 위함
+            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(openFileDialog.FileName));//데이터 변환 Frequency와 value를 사용하기 위함 SeacchPageFre  사용하기 위함
+            PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
 
 
         }
@@ -198,10 +199,10 @@ namespace WpfApp2.Commands.MainSave
                             Attenuator = attenuator,
                             AttenAccuracy = attenAccuracy
                         });
-                        
-                    }
 
-                    CommonDelegate.ClearChart(); //데이터 변경시 차트 초기화
+                    Console.WriteLine("Att :"+ attenuator + "AttAC : "+ attenAccuracy);
+                    }
+                    PlotModelImp.GetPlotModelImp().ClearChartMethod(); //데이터 변경시 차트 초기화
 
                 }
             }
@@ -246,7 +247,7 @@ namespace WpfApp2.Commands.MainSave
                 }
             }
 
-            CommonDelegate.chageChart(ref datas);
+            PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
             ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(openFileDialog.FileName));//데이터 변환 Frequency와 value를 사용하기 위함
 
         }

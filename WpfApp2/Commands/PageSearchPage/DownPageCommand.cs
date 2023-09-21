@@ -32,7 +32,7 @@ namespace WpfApp2.Commands
                 //현재 페이지 -1
                 List<Data> datas = _dataRepository.GetDataBox()[currentPage - 2];
 
-                CommonDelegate.chageChart(ref datas);
+                mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
 
                 mainViewModel.CurrentPage = "" + (currentPage - 1);
                 mainViewModel.MaxAndCurPage = mainViewModel.CurrentPage + "/" + dataBox.Count;

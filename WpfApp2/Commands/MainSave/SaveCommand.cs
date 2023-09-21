@@ -83,6 +83,7 @@ namespace WpfApp2.Commands
             else if (fileName.Contains(CalFileNameEnum.Atten.ToString()))
             {
                 mainViewModel.Fr1Content = null;
+                mainViewModel.Fr2Content = LoadedAtten.GetLoadedAtten();
                 mainViewModel.PageSearchPageBtVis = Visibility.Hidden;
                 mainViewModel.FreSearchPageBtVis = Visibility.Hidden;
             }
