@@ -11,9 +11,9 @@
 
     <Grid>
         <Label FontSize="13" Margin="86,22,323,35">Frequency :</Label>
-        <TextBox  TextAlignment="Center" Text="{Binding FreTxt}" Margin="165,22,239,45"></TextBox>
+        <TextBox  TextAlignment="Center" Text="{Binding FreTxt,UpdateSourceTrigger=PropertyChanged}" Margin="165,22,239,45"></TextBox>
         <Label FontSize="13" Margin="257,22,183,35">Span :</Label>
-        <TextBox TextAlignment="Center" Text="{Binding SpanTxt}"  Margin="302,22,102,45"/>
+        <TextBox TextAlignment="Center" Text="{Binding SpanTxt,UpdateSourceTrigger=PropertyChanged}"  Margin="302,22,102,45"/>
         <Button FontSize="15" Command="{Binding FindBySapn}" Margin="410,22,27,45">검색</Button>
     </Grid>
 </Page>

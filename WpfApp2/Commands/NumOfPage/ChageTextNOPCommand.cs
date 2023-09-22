@@ -85,7 +85,7 @@ namespace WpfApp2.Commands
                 }
             }
             else {
-                Console.WriteLine(Int32.Parse(mainViewModel.PageNumber));
+
                 int i = 0;
                 for (int j = 0; j < Int32.Parse(mainViewModel.PageNumber) - 1; j ++) //
                 {
@@ -98,7 +98,6 @@ namespace WpfApp2.Commands
                 dataBox.Add(remainingObjects);
             }
             
-            Console.WriteLine(dataBox.Count);
             //첫번째 데이터 차트 표시
             List<Data> firstData = dataBox[0];
             mainViewModel.PlotModelmp.ChageCharMethod(ref firstData);

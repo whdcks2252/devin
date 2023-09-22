@@ -46,6 +46,11 @@ namespace WpfApp2.viewmodel
 
         }
 
+        public static void ClearProp()
+        {
+            CalViewModel.GetMainViewModel().AttenTxt = "";
+        }
+
         //IQ command
         public ICommand Iq_Abt { get; set; }
         public ICommand Iq_Bbt { get; set; }
@@ -85,7 +90,19 @@ namespace WpfApp2.viewmodel
         private Brush fbtFG = Brushes.Black;
 
         //Atten
-        public string AttenTxt {  get; set; }
+        private string attenTxt;
+
+        public string AttenTxt {
+            get { return attenTxt; }
+            set
+            {
+                if (attenTxt != value)
+                {
+                    attenTxt = value;
+                    OnPropertyChanged("AttenTxt");//속성값이 들어가야함
+                }
+            }
+        }
 
 
 

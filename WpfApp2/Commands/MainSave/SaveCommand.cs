@@ -34,7 +34,7 @@ namespace WpfApp2.Commands
 
 
         private void save()
-        {  
+        {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             OpenFileMenager openFileMenager = new OpenFileMenager();
             openFileDialog.Filter = "TEXT files (*.txt)|*.txt|CAL files (*.cal)|*.cal|TEXT,CAL(*.txt,*.cal)|*.txt;*.cal";
@@ -49,13 +49,14 @@ namespace WpfApp2.Commands
                     if (fileName.Contains(".cal"))
                     {
                         openFileMenager.CalOpen(ref openFileDialog, ref _dataRepository);
-                        
+                        CalViewModel.ClearProp();
                     }
                     else
                     {
                         openFileMenager.TextOpen(ref openFileDialog, ref _dataRepository);
                     }
-
+                    //속성값 초기화
+                    mainViewModel.ClearProp();
                     //Block에 파일 경로 표시
                     ChageBlock(ref fileName);
                     //y축 라벨 변경

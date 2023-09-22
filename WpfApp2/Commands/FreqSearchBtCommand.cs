@@ -36,6 +36,7 @@ namespace WpfApp2.Commands
                 if ( datas.Count==0) return;
                 ChangeFrameAndColor(ref mainViewModel);
                 mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
+                mainViewModel.ClearProp();
 
             }
             catch (Exception ex) {

@@ -20,7 +20,6 @@ namespace WpfApp2.viewmodel
     {
         private  IRepository _dataRepository;
         private  static MainViewModel mainViewModel;
-
         public MainViewModel(IRepository _dataRepository)
         {
             this._dataRepository = _dataRepository;
@@ -45,7 +44,17 @@ namespace WpfApp2.viewmodel
             return mainViewModel;
 
         }
+        public void ClearProp()
+        {
+            _dataRepository.ClearDataBox();
+            MaxAndCurPage = "1/n";
+            currentPage = null;
+            SeachTextBoxTx = null;
+            PageNumber = null;
+            FreTxt = null;
+            SpanTxt = null;
 
+        }
 
        ////Command
             //MainComand
