@@ -82,7 +82,7 @@ namespace WpfApp2
 
             };
             foreach (var data in datas)
-                lineSeries.Points.Add(new DataPoint(data.Freq, data.PowerAccuracy));
+                lineSeries.Points.Add(new DataPoint(data.Frequency/1000000, data.Values));
             plotModelImp.Series.Add(lineSeries);
 
             plotModelImp.InvalidatePlot(true);// 바인딩 즉시업데이트 트리거

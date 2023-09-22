@@ -30,17 +30,18 @@ namespace WpfApp2.Commands
             {
                 
                 List<Data> datas = _dataRepository.GetDatas();
+                string fileName=mainViewModel.TxtBlock;
+               
+                    //만약 둘다 널값 초기화 span
+                    if (mainViewModel.SpanTxt == "" && mainViewModel.FreTxt == "")
+                    {
+                        mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
+                        return;
+                    }
 
-                //만약 둘다 널값 초기화 span
-                if(mainViewModel.SpanTxt == ""&&mainViewModel.FreTxt=="") {
-                    mainViewModel.PlotModelmp.ChageCharMethod(ref datas);
-                    return;
-                }
-
-
-                ResultSpan(ref datas);
-            }
-            catch (Exception ex) { MessageBox.Show("없는 페이지 입니다"); }
+                    ResultSpan(ref datas);
+               
+            } catch (Exception ex) { MessageBox.Show("없는 페이지 입니다"); }
 
         }
 
@@ -49,22 +50,25 @@ namespace WpfApp2.Commands
         {
             
             List<Data>ResultDatas= new List<Data>();
-            int selecteFre = Int32.Parse(mainViewModel.FreTxt);
-            int span =Int32.Parse(mainViewModel.SpanTxt)/2;
+            double selecteFre = Int32.Parse(mainViewModel.FreTxt);
+            double span =Int32.Parse(mainViewModel.SpanTxt)/2;
 
+            if ((selecteFre - span) < 0)
+            { MessageBox.Show("잘못된 span 범위 입니다"); return; }
 
-            foreach(Data data in datas)
-            {
-                if (data.Frequency >= (selecteFre - span) && data.Frequency <= (selecteFre + span))
+            foreach (Data data in datas)
                 {
-                    ResultDatas.Add(data);
-                }
-            }
+                    if (data.Frequency >= (selecteFre - span) && data.Frequency <= (selecteFre + span))
+                    {
 
+                        ResultDatas.Add(data);
+                    }
+                }
+            
             mainViewModel.PlotModelmp.ChageCharMethod(ref ResultDatas);
             
         }
-    
+        
         public override bool CanExecute(object parameter)
         {
             return true;

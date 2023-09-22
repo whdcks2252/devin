@@ -106,7 +106,7 @@ namespace WpfApp2.Commands.MainSave
                         {
                             Header = Header,
                             Version = version,
-                            Freq = Freq,
+                            Freq = Freq/1000000,
                             A = A,
                             B = B,
                             C = C,
@@ -152,7 +152,7 @@ namespace WpfApp2.Commands.MainSave
                         {
                             Header = Header,
                             Version = version,
-                            Freq = Freq,
+                            Freq = Freq/1000000,
                             Temperature = temperature,
                             PowerAccuracy = powerAccuracy
                         });
@@ -195,12 +195,10 @@ namespace WpfApp2.Commands.MainSave
                         {
                             Header = Header,
                             Version = version,
-                            Freq = Freq,
+                            Freq = Freq / 1000000,
                             Attenuator = attenuator,
                             AttenAccuracy = attenAccuracy
                         });
-
-                    Console.WriteLine("Att :"+ attenuator + "AttAC : "+ attenAccuracy);
                     }
                     PlotModelImp.GetPlotModelImp().ClearChartMethod(); //데이터 변경시 차트 초기화
 
@@ -239,7 +237,7 @@ namespace WpfApp2.Commands.MainSave
                         {
                             Header = Header,
                             Version = version,
-                            Frequency = Freq,
+                            Frequency = Freq / 1000000,
                             Values = value,
                            
                         });

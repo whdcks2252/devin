@@ -84,12 +84,13 @@ namespace WpfApp2.Commands.CalViewModelCommand
                 // 단일 Atten 값인 경우
                 if (int.TryParse(attenInput, out int targetAtten))
                 {
-                    List<Data> resultData = _calDataRepository.SingAttenCal(targetAtten);
+                    if (!(targetAtten%2==0)) { MessageBox.Show("주파수당 step = 2"); return; }
+                        List<Data> resultData = _calDataRepository.SingAttenCal(targetAtten);
 
-                    ChangeData.tempAtten(ref resultData);
+                        ChangeData.tempAtten(ref resultData);
 
-                    PlotModelImp.GetPlotModelImp().ChageCharMethod(ref resultData);
-                   
+                        PlotModelImp.GetPlotModelImp().ChageCharMethod(ref resultData);
+                    
 
                 }
             }
