@@ -30,6 +30,62 @@ namespace WpfApp2.util
 
 
         }
+        public static List<Data> ConverterIQ(ref ICalDataRepository _calDataRepository,string IQ_Button)
+        {
+            List<Data>datas=_calDataRepository.GetDataDTO();
+
+            if (IQ_Button == IQ_ButtonEnum.A.ToString())
+            {
+                foreach(Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.A;
+                }
+            }
+            if (IQ_Button == IQ_ButtonEnum.B.ToString())
+            {
+                foreach (Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.B;
+                }
+            }
+            if (IQ_Button == IQ_ButtonEnum.C.ToString())
+            {
+                foreach (Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.C;
+                }
+            }
+            if (IQ_Button == IQ_ButtonEnum.D.ToString())
+            {
+                foreach (Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.D;
+                }
+            }
+            if (IQ_Button == IQ_ButtonEnum.E.ToString())
+            {
+                foreach (Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.E;
+                }
+            }
+            if (IQ_Button == IQ_ButtonEnum.F.ToString())
+            {
+                foreach (Data data in datas)
+                {
+                    data.Frequency = data.Freq;
+                    data.Values = data.F;
+                }
+            }
+            return datas;
+
+        }
+
         private static void tempPwrOffset(ref List<Data> datas)
         {
             for(int i=0; i < datas.Count; i++)

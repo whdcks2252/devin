@@ -56,8 +56,8 @@ namespace WpfApp2.Commands.CalViewModelCommand
         private void chageChart()
         {
             string buttonState = calViewModel.ButtonOnOff.ToString();
-            List<Data> datas = _calDataRepository.GetDataDTO();
-            PlotModelImp.GetPlotModelImp().ChageCharMethodIq_Button(ref datas, ref buttonState);
+            List<Data> datas = ChangeData.ConverterIQ(ref _calDataRepository, buttonState);
+            PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
         }
         public override bool CanExecute(object parameter)
         {
