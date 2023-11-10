@@ -32,8 +32,6 @@ namespace WpfApp2.viewmodel
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
             ChageTextNOP=new ChageTextNOPCommand(this, _dataRepository);
             PlotModelmp = PlotModelImp.GetPlotModelImp();
-
-            _pageButtonCommand = new RelayCommand<object>(CommandPageButton);
         }
 
         //객체 인스턴스
@@ -55,22 +53,6 @@ namespace WpfApp2.viewmodel
             PageNumber = null;
             FreTxt = null;
             SpanTxt = null;
-
-        }
-
-        private ICommand _pageButtonCommand;
-        public ICommand PageButtonCommand
-        {
-            get
-            {
-                if (_pageButtonCommand == null)
-                    new RelayCommand<object>(CommandPageButton);
-                return _pageButtonCommand;
-            }
-        }
-
-        private void CommandPageButton(object obj)
-        {
 
         }
 

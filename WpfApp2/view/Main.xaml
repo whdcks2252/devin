@@ -72,9 +72,7 @@
         </Grid>
         <!--찾기 기능-->
         <Grid Grid.Row="1" Grid.Column="1">
-            
             <Frame Content="{Binding Fr2Content}"  x:Name="NumOfPageFrame" NavigationUIVisibility="Hidden"/>
-            
         </Grid>
 
     </Grid>
