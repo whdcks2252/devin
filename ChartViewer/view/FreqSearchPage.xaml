@@ -1,0 +1,20 @@
+﻿<Page x:Class="ChartViewer.view.FreqSearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ChartViewer.view"
+      mc:Ignorable="d" 
+      d:DesignHeight="97.34" d:DesignWidth="488"
+      Title="FreqSearchPage" >
+
+
+    <Grid>
+        <Label FontSize="13" Margin="86,22,323,35">Frequency :</Label>
+        <TextBox  TextAlignment="Center" Text="{Binding FreTxt,UpdateSourceTrigger=PropertyChanged}" Margin="165,22,239,45"></TextBox>
+        <Label FontSize="13" Margin="257,22,183,35">Span :</Label>
+        <TextBox TextAlignment="Center" Text="{Binding SpanTxt,UpdateSourceTrigger=PropertyChanged}"  Margin="302,22,102,45"/>
+        <Button FontSize="15" Command="{Binding FindBySapn}" Margin="410,22,27,45">검색</Button>
+    </Grid>
+</Page>
+    
