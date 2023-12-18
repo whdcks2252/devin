@@ -14,10 +14,10 @@ namespace ChartViewer.Commands.MainSave
      class OpenFileMenager
     {
         //텍스트 파일 오픈
-        public  void TextOpen(ref OpenFileDialog openFileDialog,ref IRepository _dataRepository)
+        public  void TextOpen(ref string filePath, ref IRepository _dataRepository)
         {
             //반복문이 많을시 StreamReader로 파일 입출력을 하는게 File 클래스 보다 좋음 
-            using (StreamReader rd = new StreamReader(openFileDialog.FileName))
+            using (StreamReader rd = new StreamReader(filePath))
             {
                 List<string> textVale = new List<string>();
                 string[] splitData = new string[2];
@@ -51,37 +51,37 @@ namespace ChartViewer.Commands.MainSave
         }
 
         //.cal 파일 오픈
-        public void CalOpen(ref OpenFileDialog openFileDialog,ref IRepository _dataRepository)
+        public void CalOpen(ref string filePath,ref IRepository _dataRepository)
         {
-                string fileName = Path.GetFileName(openFileDialog.FileName);
+                string fileName = Path.GetFileName(filePath);
             
                 if (fileName.Contains(CalFileNameEnum.IQ_Imb.ToString()))
                 {
-                    FileNameIsIQ(ref openFileDialog, ref _dataRepository);
+                    FileNameIsIQ(ref filePath, ref _dataRepository);
                 }
                 else if (fileName.Contains(CalFileNameEnum.PwrOffset.ToString()))
                 {
-                    FileNameIsPwr(ref openFileDialog, ref _dataRepository);
+                    FileNameIsPwr(ref filePath, ref _dataRepository);
                 }
                 else if (fileName.Contains(CalFileNameEnum.Atten.ToString()))
                 {
-                    FileNameIsAtt(ref openFileDialog, ref _dataRepository);
+                    FileNameIsAtt(ref filePath, ref _dataRepository);
                 }
                 else
-                    GlobalCalFile(ref openFileDialog, ref _dataRepository);
+                    GlobalCalFile(ref filePath, ref _dataRepository);
 
         }
 
         //IQ_Imb 포함 파일
-        private  void FileNameIsIQ(ref OpenFileDialog openFileDialog, ref IRepository _dataRepository)
+        private  void FileNameIsIQ(ref string filePath, ref IRepository _dataRepository)
         {
             List<Data> datas = _dataRepository.GetDatas();
             datas.Clear();
 
-            using (FileStream fs = new FileStream(openFileDialog.FileName,
+            using (FileStream fs = new FileStream(filePath,
                 FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096))
             {
-                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(openFileDialog.FileName));
+                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(filePath));
                 using (BinaryReader reader = new BinaryReader(fs))
                 {
                     int i = 0;
@@ -124,15 +124,15 @@ namespace ChartViewer.Commands.MainSave
         }
 
         //PwrOffset 포함 파일
-        private  void FileNameIsPwr(ref OpenFileDialog openFileDialog, ref IRepository _dataRepository)
+        private  void FileNameIsPwr(ref string filePath, ref IRepository _dataRepository)
         {
             List<Data> datas = _dataRepository.GetDatas();
             datas.Clear();
 
-            using (FileStream fs = new FileStream(openFileDialog.FileName,
+            using (FileStream fs = new FileStream(filePath,
                 FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096))
             {
-                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(openFileDialog.FileName));
+                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(filePath));
                 using (BinaryReader reader = new BinaryReader(fs))
                 {
                     int i = 0;
@@ -161,21 +161,21 @@ namespace ChartViewer.Commands.MainSave
                 }
             }
 
-            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(openFileDialog.FileName));//데이터 변환 Frequency와 value를 사용하기 위함 SeacchPageFre  사용하기 위함
+            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(filePath));//데이터 변환 Frequency와 value를 사용하기 위함 SeacchPageFre  사용하기 위함
             PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
 
 
         }
         //Atten 포함 파일
-        private void FileNameIsAtt(ref OpenFileDialog openFileDialog, ref IRepository _dataRepository)
+        private void FileNameIsAtt(ref string filePath, ref IRepository _dataRepository)
         {
             List<Data> datas = _dataRepository.GetDatas();
             datas.Clear();
 
-            using (FileStream fs = new FileStream(openFileDialog.FileName,
+            using (FileStream fs = new FileStream(filePath,
                 FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096))
             {
-                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(openFileDialog.FileName));
+                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(filePath));
                 using (BinaryReader reader = new BinaryReader(fs))
                 {
                     int i = 0;
@@ -207,15 +207,15 @@ namespace ChartViewer.Commands.MainSave
         }
 
         //Global.Cal 파일
-        private void GlobalCalFile(ref OpenFileDialog openFileDialog, ref IRepository _dataRepository)
+        private void GlobalCalFile(ref string filePath, ref IRepository _dataRepository)
         {
             List<Data> datas = _dataRepository.GetDatas();
             datas.Clear();
 
-            using (FileStream fs = new FileStream(openFileDialog.FileName,
+            using (FileStream fs = new FileStream(filePath,
                 FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096))
             {
-                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(openFileDialog.FileName));
+                Console.WriteLine("=======Read File :: " + System.IO.Path.GetFileName(filePath));
                 using (BinaryReader reader = new BinaryReader(fs))
                 {
                     //카운트
@@ -244,9 +244,9 @@ namespace ChartViewer.Commands.MainSave
                     }
                 }
             }
-
+            
             PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
-            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(openFileDialog.FileName));//데이터 변환 Frequency와 value를 사용하기 위함
+            ChangeData.ConverterData(ref _dataRepository, Path.GetFileName(filePath));//데이터 변환 Frequency와 value를 사용하기 위함
 
         }
 

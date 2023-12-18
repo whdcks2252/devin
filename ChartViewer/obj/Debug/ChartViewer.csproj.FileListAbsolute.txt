@@ -74,3 +74,5 @@ C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\ChartVie
 C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\ChartViewer.csproj.CopyComplete
 C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\ChartViewer.exe
 C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\ChartViewer.pdb
+C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\Styles.baml
+C:\Users\seque\OneDrive\바탕 화면\ChartViewer\ChartViewer\obj\Debug\App.baml

@@ -13,17 +13,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using ChartViewer.Commands;
 using ChartViewer.util;
+using System.Runtime.InteropServices;
+using ChartViewer.Commands.MainSave;
 
 namespace ChartViewer.viewmodel
 {
-    class MainViewModel:ViewModelBase
+    public class MainViewModel:ViewModelBase
     {
         private  IRepository _dataRepository;
         private  static MainViewModel mainViewModel;
         public MainViewModel(IRepository _dataRepository)
         {
             this._dataRepository = _dataRepository;
-            SaveData = new SaveCommand(this, _dataRepository); //save 커맨드 이벤트
+           // SaveData = new SaveCommand(this, _dataRepository); //save 커맨드 이벤트
             PageSearchBt=new PageSearchBtCommand(this, _dataRepository);
             FreSearchBt = new FreqSearchBtCommand(this, _dataRepository);
             FindPage = new FindPageCommand(this, _dataRepository); //FindPage 커맨드 이벤트
@@ -32,6 +34,9 @@ namespace ChartViewer.viewmodel
             FindBySapn = new FindBySapnCommand(this, _dataRepository);
             ChageTextNOP=new ChageTextNOPCommand(this, _dataRepository);
             PlotModelmp = PlotModelImp.GetPlotModelImp();
+
+            SaveData2=new GetDataByInitPath(this,_dataRepository);
+
         }
 
         //객체 인스턴스
@@ -44,6 +49,14 @@ namespace ChartViewer.viewmodel
             return mainViewModel;
 
         }
+
+        #region ini 입력 메소드
+        [DllImport("kernel32")]
+        private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
+        #endregion
+
+
+
         public void ClearProp()
         {
             _dataRepository.ClearDataBox();
@@ -58,7 +71,7 @@ namespace ChartViewer.viewmodel
 
        ////Command
             //MainComand
-        public ICommand SaveData { get; set; }
+        public GetDataByInitPath SaveData2 { get; set; }
         public ICommand FreSearchBt { get; set; }
         public ICommand PageSearchBt {  get; set; }
 
@@ -90,15 +103,15 @@ namespace ChartViewer.viewmodel
         private string seachTextBoxTx;
         private string maxAndCurPage = "1/n";
         private string currentPage;
-        private Brush pageSearchPageBtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
-        private Brush pageSearchPageBtFG = Brushes.Black;
+        private Brush pageSearchPageBtBG ;
+        private Brush pageSearchPageBtFG ;
         private Visibility pageSearchPageBtVis;
 
         //FreSearchPage
         private string freTxt;
         private string spanTxt;
-        private Brush freSearchPageBtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
-        private Brush freSearchPageBtFG = Brushes.Black;
+        private Brush freSearchPageBtBG ;
+        private Brush freSearchPageBtFG ;
         private Visibility freSearchPageBtVis = Visibility.Visible;
 
         //main

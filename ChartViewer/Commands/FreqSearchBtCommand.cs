@@ -46,18 +46,18 @@ namespace ChartViewer.Commands
         }
         private void ChangeFrameAndColor(ref MainViewModel mainViewModel)
         {
-            if(!(mainViewModel.FreSearchPageBtBG == Brushes.Black))
+            if(!(mainViewModel.FreSearchPageBtBG == Brushes.Gray))
             {
-                mainViewModel.FreSearchPageBtBG = Brushes.Black;
+                mainViewModel.FreSearchPageBtBG = Brushes.Gray;
                 mainViewModel.FreSearchPageBtFG = Brushes.White;
-                mainViewModel.PageSearchPageBtBG= new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
+                mainViewModel.PageSearchPageBtBG= Brushes.White;
                 mainViewModel.PageSearchPageBtFG = Brushes.Black;
                 mainViewModel.Fr1Content = FreqSearchPage.GetFreqSearchPage();
                 mainViewModel.Fr2Content = null;
             }
             else
             {
-                mainViewModel.FreSearchPageBtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
+                mainViewModel.FreSearchPageBtBG = Brushes. White;
                 mainViewModel.FreSearchPageBtFG = Brushes.Black;
                 mainViewModel.Fr1Content = null;
 

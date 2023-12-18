@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ChartViewer.viewmodel;
+using System.Windows.Media;
 
 namespace ChartViewer
 {
-     class PlotModelImp : PlotModel
+     public class PlotModelImp : PlotModel
     {
         private static PlotModelImp plotModelImp;
 
@@ -30,12 +31,13 @@ namespace ChartViewer
         {
             //PlotModel 생성
             plotModelImp.Title = "Chart" ;
-
             //x축 생성
             plotModelImp.Axes.Add(new LinearAxis
             {
                 Position = AxisPosition.Bottom,
-                Title = "frequency(GHz)",
+                Title = "frequency(MHz)",
+                MajorGridlineStyle = LineStyle.Solid,
+
                 IsZoomEnabled = false,
             });
             //y축 생성

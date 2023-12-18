@@ -24,8 +24,7 @@ namespace ChartViewer.view
         private static LoadedAtten loadedAtten;
         public LoadedAtten()
         {
-            this.Height = 389.36;
-            this.Width = 219.75;
+           
             InitializeComponent();
 
             var vm = CalViewModel.GetMainViewModel();

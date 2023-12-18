@@ -65,7 +65,9 @@ namespace ChartViewer.viewmodel
 
 
         //IQ_Button Onoff
-        public IQ_ButtonEnum ButtonOnOff { get; set; } = IQ_ButtonEnum.NULL;
+        // public IQ_ButtonEnum ButtonOnOff { get; set; } = IQ_ButtonEnum.NULL;
+         public bool ButtonOnOff { get; set; }
+
 
         //--abt
         private Brush abtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));

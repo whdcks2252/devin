@@ -6,21 +6,26 @@
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:ChartViewer.view"
       mc:Ignorable="d"
-      Title="NumOfPage" Height="389.36" Width="219.75">
+      Title="NumOfPage">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock Grid.Row="0" FontSize="15" Margin="10,16,36,25" Text="Num Of Page :"/>
-            <TextBox Text="{Binding PageNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="20" Background="White" Foreground="Black" Margin="123,11,10,63"  >
-                <TextBox.InputBindings>
-                    <KeyBinding Command="{Binding ChageTextNOP}" Key="Enter"/>
-                </TextBox.InputBindings>
-            </TextBox>
+            <StackPanel HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource SearchTextStyle}" Grid.Row="0" FontSize="15" Text="Num Of Page :&#xA0;"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox 
+                Style="{StaticResource SearchBoxStyle}" Text="{Binding PageNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                Width="80" 
+                HorizontalAlignment="Left"  BorderBrush="Black" BorderThickness="6" Margin="10,5,5,5">
+                        <TextBox.InputBindings>
+                            <KeyBinding Command="{Binding ChageTextNOP}" Key="Enter"/>
+                        </TextBox.InputBindings>
+                    </TextBox>
+                    <Button Style="{StaticResource TaskCtrlButtonStyle}" Command="{Binding ChageTextNOP}">적용</Button>
+                </StackPanel>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="1"/>
     </Grid>

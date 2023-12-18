@@ -8,72 +8,119 @@
       xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="ChartViewer.view.Main"
       mc:Ignorable="d" 
       d:DesignHeight="600"
-      Title="ChartViewer" Width="879">
+      Background="White"
+      Icon="/chart.png"
+      Title="ChartViewer" Width="1200">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="BorderBrush" Value="LightGray"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="Margin" Value="-1, 0, 0, -0.5"></Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3.9*"/>
+            <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
 
         <!-- Grid.ColumnSpan="3" 그리드 칸 합치기-->
-        <!--1번-->
-        <Grid Grid.Column="1" Grid.Row="0">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock  VerticalAlignment="Center" TextAlignment="Center" Text="{Binding TxtBlock}" 
-                            TextWrapping="Wrap" Background="Beige" Foreground="Black" FontSize="15" Height="56" Width="94"/>
-                <Button Margin="20,0,0,0" VerticalContentAlignment="Center" Content="LoadFile" Height="56" Command="{Binding SaveData}" Width="94">
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
-        </Grid>
+
 
         <!--차트-->
         <Grid Grid.Column="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="7*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="7*"/>
-                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-
-
-            <Grid Grid.Column="1" Grid.Row="1">
-                <Canvas>
-                    <TextBlock Text="{Binding YLable,UpdateSourceTrigger=PropertyChanged}" FontSize="13" Panel.ZIndex="1" HorizontalAlignment="Left"  VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="4" Width="110"></TextBlock>
-                    <oxy:PlotView  Model="{Binding PlotModelmp,UpdateSourceTrigger=PropertyChanged}" Height="379" Width="467"/>
-                    <TextBlock FontSize="15" Panel.ZIndex="1" Canvas.Left="410" Canvas.Top="346" HorizontalAlignment="Left" VerticalAlignment="Center" Width="91"><Run Text="frequency"/></TextBlock>
-                </Canvas>
-            </Grid>
+            
+            <Border Grid.Column="1">
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Column="1" Style="{StaticResource SearchTextStyle}" Grid.Row="1" Text="{Binding YLable,UpdateSourceTrigger=PropertyChanged}"
+                               FontSize="15"  FontWeight="Bold" Panel.ZIndex="1" HorizontalAlignment="Left"  VerticalAlignment="Center" Canvas.Left="10" 
+                               Canvas.Top="4" Width="110"  TextAlignment="Center" Foreground="Black" ></TextBlock>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1">
+                <Grid >
+                    <oxy:PlotView  Model="{Binding PlotModelmp,UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Border>
         </Grid>
-        <!--찾기-->
-        <Grid Grid.Column="0" Grid.Row="3">
-            <StackPanel Orientation="Vertical"  RenderTransformOrigin="0.5,0.5" Margin="518,0,0,11">
-                <Button x:Name="FreqSearchBt" Command="{Binding FreSearchBt}" Height="39" 
+
+        <Border Grid.Column="0" Grid.Row="3">
+            <!--찾기-->
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="130"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical">
+                    <Button Style="{StaticResource TaskCtrlButtonStyle}" x:Name="FreqSearchBt" Command="{Binding FreSearchBt}" Height="39" 
                         Content="FreqSearch"  Background="{Binding FreSearchPageBtBG, UpdateSourceTrigger=PropertyChanged}"
                         Foreground="{Binding FreSearchPageBtFG,UpdateSourceTrigger=PropertyChanged}"
                          Visibility="{Binding FreSearchPageBtVis,UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Command="{Binding PageSearchBt}" x:Name="PageSearchBt" Height="39" Content="PageSearch"
+                    <Button Style="{StaticResource TaskCtrlButtonStyle}" Command="{Binding PageSearchBt}" x:Name="PageSearchBt" Height="39" Content="PageSearch"
                         Background="{Binding PageSearchPageBtBG, UpdateSourceTrigger=PropertyChanged}"
                         Foreground="{Binding PageSearchPageBtFG,UpdateSourceTrigger=PropertyChanged}"
                         Visibility="{Binding PageSearchPageBtVis,UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-            <Frame Content="{Binding Fr1Content}"  x:Name="fr" Margin="0,0,141,0" NavigationUIVisibility="Hidden"/>
-        </Grid>
-        <!--찾기 기능-->
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Frame Content="{Binding Fr2Content}"  x:Name="NumOfPageFrame" NavigationUIVisibility="Hidden"/>
-        </Grid>
+                </StackPanel>
+                <Frame Grid.Row="1" Grid.Column="0" Content="{Binding Fr1Content}"  x:Name="fr"  NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Border>
+        
+        <Border Grid.Column="1" Grid.RowSpan="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--1번-->
+                <Grid  Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SearchTextStyle}" TextAlignment="Center" Text="FileName :&#xA0;" />
+                        <TextBlock Style="{StaticResource SearchTextStyle}" TextAlignment="Center" Text="{Binding TxtBlock}" Background="LightGray"  Foreground="Black" FontSize="13" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="110"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="1" HorizontalAlignment="Left" Content="{Binding Fr2Content}"  x:Name="NumOfPageFrame" NavigationUIVisibility="Hidden"/>
+                </Grid>
+            </Grid>
+        </Border>
 
     </Grid>
 </Window>

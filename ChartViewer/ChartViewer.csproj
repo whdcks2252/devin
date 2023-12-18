@@ -96,6 +96,7 @@
     <Compile Include="Commands\CalViewModelCommand\Iq_AbtCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FreqSearchPage\FindBySapnCommand.cs" />
+    <Compile Include="Commands\MainSave\GetDataByInitPath.cs" />
     <Compile Include="Commands\MainSave\OpenFileMenager.cs" />
     <Compile Include="Commands\NumOfPage\ChageTextNOPCommand.cs" />
     <Compile Include="Commands\FreqSearchBtCommand.cs" />
@@ -131,6 +132,10 @@
     <Compile Include="view\FreqSearchPage.xaml.cs">
       <DependentUpon>FreqSearchPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\LoadedAtten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +216,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,13 +15,13 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <WrapPanel Margin="0,4,27,0">
-                <Button Command="{Binding Iq_Abt}" Margin="0,0,10,10" FontSize="20" Background="{Binding AbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding AbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">A</Button>
-                <Button Command="{Binding Iq_Bbt}" Margin="0,0,10,10" FontSize="20" Background="{Binding BbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding BbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">B</Button>
-                <Button Command="{Binding Iq_Cbt}" Margin="0,0,10,10" FontSize="20" Background="{Binding CbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding CbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">C</Button>
-                <Button Command="{Binding Iq_Dbt}" Margin="0,0,10,10" FontSize="20" Background="{Binding DbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding DbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">D</Button>
-                <Button Command="{Binding Iq_Ebt}" Margin="0,0,10,10" FontSize="20" Background="{Binding EbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding EbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">E</Button>
-                <Button Command="{Binding Iq_Fbt}" Margin="0,0,10,10" FontSize="20" Background="{Binding FbtBG, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding FbtFG, UpdateSourceTrigger=PropertyChanged}" Height="41" Width="53">F</Button>
+            <WrapPanel Margin="20,0,0,0">
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Command="{Binding Iq_Abt}" Margin="0,0,10,10" FontSize="20"  CommandParameter="A"  GroupName="MenuGroup" Height="41" Width="53" >A</RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Command="{Binding Iq_Bbt}" Margin="0,0,10,10" FontSize="20"  CommandParameter="B" GroupName="MenuGroup" Height="41" Width="53">B</RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Command="{Binding Iq_Cbt}" Margin="0,0,10,10" FontSize="20"   CommandParameter="C"  GroupName="MenuGroup" Height="41" Width="53">C</RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}"  Command="{Binding Iq_Dbt}" Margin="0,0,10,10" FontSize="20"  CommandParameter="D"  GroupName="MenuGroup" Height="41" Width="53">D</RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Command="{Binding Iq_Ebt}" Margin="0,0,10,10" FontSize="20"  CommandParameter="E" GroupName="MenuGroup" Height="41" Width="53">E</RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Command="{Binding Iq_Fbt}" Margin="0,0,10,10" FontSize="20"  CommandParameter="F" GroupName="MenuGroup" Height="41" Width="53">F</RadioButton>
             </WrapPanel>
         </Grid>
     </Grid>

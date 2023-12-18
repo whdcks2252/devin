@@ -20,52 +20,31 @@ namespace ChartViewer.Commands.CalViewModelCommand
             this._calDataRepository = _calDataRepository;
         }
 
-        private void ebt()
+        private void ebt(string param)
         {
-            if (!(calViewModel.EbtBG == Brushes.Black))
-            {
-                calViewModel.ButtonOnOff = IQ_ButtonEnum.E;
-                calViewModel.EbtBG = Brushes.Black;
-                calViewModel.EbtFG = Brushes.White;
 
-                chageChart();
-            }
-            else
-            {
-                calViewModel.ButtonOnOff = IQ_ButtonEnum.NULL;
-                calViewModel.EbtBG = new SolidColorBrush(Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD));
-                calViewModel.EbtFG = Brushes.Black;
-                PlotModelImp.GetPlotModelImp().ClearChartMethod();
+            chageChart(param);
 
-            }
         }
 
-        private bool ButtonOnOff()
-        {
-            if (calViewModel.ButtonOnOff==IQ_ButtonEnum.NULL||calViewModel.ButtonOnOff==IQ_ButtonEnum.E)
-            {
-                return true;
-            }
-            
-            else
-                return false;
-            
-        }
 
-        private void chageChart()
+
+        private void chageChart(string param)
         {
-            string buttonState = calViewModel.ButtonOnOff.ToString();
+            string buttonState = param;
             List<Data> datas = ChangeData.ConverterIQ(ref _calDataRepository, buttonState);
             PlotModelImp.GetPlotModelImp().ChageCharMethod(ref datas);
         }
         public override bool CanExecute(object parameter)
         {
-            return ButtonOnOff();
+            // return ButtonOnOff();
+            return true;
+
         }
 
         public override void Execute(object parameter)
         {
-            ebt();
+            ebt(parameter.ToString());
         }
     }
 }

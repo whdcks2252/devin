@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="SearchBoxStyle"
+       TargetType="{x:Type TextBox}">
+        <Setter Property="FontFamily"
+            Value="Fonts/Roboto-Regular.ttf #Roboto Regular" />
+        <Setter Property="FontSize"
+            Value="17" />
+        <Setter Property="VerticalAlignment"
+            Value="Center" />
+        <Setter Property="Background"
+            Value="#FFBDBDBD" />
+        <Setter Property="Foreground"
+            Value="Black" />
+        <Setter Property="BorderThickness"
+            Value="0" />
+        <Setter Property="Padding"
+            Value="8,7,0,0" />
+        <Setter Property="CaretBrush"
+            Value="#FFFFFF" />
+        <Setter Property="TextAlignment"
+                Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border"
+                        CornerRadius="6"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                  Focusable="false"
+                                  HorizontalScrollBarVisibility="Hidden"
+                                  VerticalScrollBarVisibility="Hidden" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        </Style>
+
+    
+
+        <Style x:Key="SearchTextStyle"
+       TargetType="{x:Type TextBlock}">
+        <Setter Property="IsHitTestVisible"
+            Value="False" />
+        <Setter Property="Visibility"
+            Value="Visible" />
+        <Setter Property="FontSize"
+            Value="15" />
+        <Setter Property="Foreground"
+            Value="Black" />
+        <Setter Property="HorizontalAlignment"
+            Value="Left" />
+        <Setter Property="VerticalAlignment"
+            Value="Center" />
+        <Setter Property="Margin"
+            Value="10,0,0,0" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="TaskCtrlButtonStyle">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" 
+                                BorderThickness="1"
+                                Padding="2,2" 
+                                BorderBrush="#FFBDBDBD"
+                                CornerRadius="3" 
+                                Background="{TemplateBinding Background}">
+                        <Grid >
+                            <ContentPresenter 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Name="content"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFBDBDBD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}" x:Key="RadioButtonStyle">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="2,2" 
+                            BorderBrush="#FFBDBDBD"
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                        <Grid >
+                            <ContentPresenter 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Name="content"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFBDBDBD"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="#FFBDBDBD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

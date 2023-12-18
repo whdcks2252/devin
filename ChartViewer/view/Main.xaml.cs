@@ -26,25 +26,22 @@ namespace ChartViewer.view
     /// </summary>
     public partial class Main : Window
     {
-        int pageSearchFlag = 0;
-        int freqSearchFlag = 0;
-        PageSearchPage PageSearchPage { get; set; }
-        FreqSearchPage FreqSearchPage { get; set; }
-        NumOfPage NumOfPage { get; set; }
         public Main()
         {
 
 
             InitializeComponent();
-            this.Width = 880;
-            this.Height = 600;
-            this.ResizeMode = ResizeMode.NoResize;
+           
 
             var dataRepository = DataRepository.GetDataRepository();
 
             var vm = MainViewModel.GetMainViewModel();
+
+
             this.DataContext = vm;
 
+            vm.SaveData2.save();
+           
         }
 
     }

@@ -24,8 +24,7 @@ namespace ChartViewer.view
         private static PageSearchPage pageSearchPage;
         public PageSearchPage()
         {
-            this.Width = 488;
-            this.Height = 97.34;
+            
             InitializeComponent();
        
             //뷰모델 연결

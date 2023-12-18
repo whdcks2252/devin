@@ -24,8 +24,7 @@ namespace ChartViewer.view
         private static LoadedIQ_ImbPage loadedIQ_ImbPage;
         private LoadedIQ_ImbPage()
         {
-            this.Height = 389.36;
-            this.Width = 219.75;
+           
             InitializeComponent();
 
             var vm = CalViewModel.GetMainViewModel();
